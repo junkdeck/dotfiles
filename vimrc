@@ -27,7 +27,7 @@ Plugin 'tomtom/tcomment_vim'
 Plugin 'tmhedberg/matchit'
 " == WEB DEVELOPMENT PLUGINS ==
 Plugin 'mattn/emmet-vim'
-Plugin 'ap/vim-css-color'
+" Plugin 'ap/vim-css-color'
 Plugin 'godlygeek/tabular'
 Plugin 'prettier/vim-prettier'
 Plugin 'wesQ3/vim-windowswap'
