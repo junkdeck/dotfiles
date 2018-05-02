@@ -1,4 +1,6 @@
 ## vim dotfile and plugins
 
-.vimrc
-```runtime vimrc```
+.vimrc:
+```
+runtime vimrc
+```
