@@ -1,6 +1,6 @@
 ## vim dotfile and plugins
 
-install [VundleVim](https://www.github.com/VundleVim/VundleVim.git)
+install [VundleVim](https://www.github.com/VundleVim/Vundle.vim)
 
 make a .vimrc in ~
 
