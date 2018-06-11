@@ -23,12 +23,18 @@ Plugin 'wellle/targets.vim'
 Plugin 'SirVer/ultisnips'
 Plugin 'junkdeck/vim-snippets'
 Plugin 'easymotion/vim-easymotion'
+Plugin 'aykamko/vim-easymotion-segments'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'tmhedberg/matchit'
+Plugin 'Yggdroot/indentLine'
+Plugin 'godlygeek/tabular'
+Plugin 'plasticboy/vim-markdown'
+Plugin 'vim-scripts/loremipsum'
+Plugin 'Rename2'
+Plugin 'chaoren/vim-wordmotion'
 " == WEB DEVELOPMENT PLUGINS ==
 Plugin 'mattn/emmet-vim'
 " Plugin 'ap/vim-css-color'
-Plugin 'godlygeek/tabular'
 Plugin 'prettier/vim-prettier'
 Plugin 'wesQ3/vim-windowswap'
 Plugin 'mattn/webapi-vim'
@@ -39,8 +45,9 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
 Plugin 'isRuslan/vim-es6'
 Plugin 'Quramy/vim-js-pretty-template'
-Plugin 'alampros/vim-styled-jsx'
+" Plugin 'alampros/vim-styled-jsx'
 Plugin 'hail2u/vim-css3-syntax'
+" Plugin 'posva/vim-vue'
 
 " All plugins must be added before following line
 call vundle#end()
@@ -125,6 +132,10 @@ hi Normal ctermbg=none
 hi NonText ctermbg=none
 
 " == PLUGIN CONFIGURATION ==
+" vim-indent-guides
+let g:indent_guides_enable_on_vim_startup = 1
+" retain vanilla conceal settings for indentLine
+let g:indentLine_setConceal = 0
 " vim-prettier setup
 let g:prettier#exec_cmd_async = 1 " asynchronous formatting
 let g:prettier#autoformat = 0 " disable formatting off iles that have @format tag
