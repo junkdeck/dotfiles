@@ -136,6 +136,7 @@ let g:indent_guides_enable_on_vim_startup = 1
 " retain vanilla conceal settings for indentLine
 let g:indentLine_setConceal = 0
 " vim-prettier setup
+let g:prettier#config#print_width = 80
 let g:prettier#exec_cmd_async = 1 " asynchronous formatting
 let g:prettier#autoformat = 0 " disable formatting off iles that have @format tag
 autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue PrettierAsync
