@@ -87,6 +87,8 @@ endfunction
 " == CORE FUNCTIONALITY CONFIGURATION ==
 " line numbers
 set number
+" highlight current line
+set cursorline
 " reload files changed outside vim
 set autoread
 " utf-8 encoding
