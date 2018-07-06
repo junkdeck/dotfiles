@@ -87,8 +87,6 @@ endfunction
 " == CORE FUNCTIONALITY CONFIGURATION ==
 " hybrid line numbers, display current line as absolute, rest as relative
 set number relativenumber
-" highlight current line
-set cursorline
 " reload files changed outside vim
 set autoread
 " utf-8 encoding
