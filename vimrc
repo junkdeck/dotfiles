@@ -18,6 +18,7 @@ Plugin 'itchyny/lightline.vim'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-eunuch'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'wellle/targets.vim'
 Plugin 'SirVer/ultisnips'
@@ -31,6 +32,7 @@ Plugin 'godlygeek/tabular'
 Plugin 'vim-scripts/loremipsum'
 Plugin 'Rename2'
 Plugin 'chaoren/vim-wordmotion'
+Plugin 'calviken/vim-gdscript3'
 " == WEB DEVELOPMENT PLUGINS ==
 Plugin 'mattn/emmet-vim'
 " Plugin 'ap/vim-css-color'
@@ -139,7 +141,7 @@ let g:indentLine_setConceal = 0
 let g:prettier#config#print_width = 80
 let g:prettier#exec_cmd_async = 1 " asynchronous formatting
 let g:prettier#autoformat = 0 " disable formatting off iles that have @format tag
-autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue PrettierAsync
+" autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue PrettierAsync
 let g:prettier#config#use_tabs = 'true' "ugh use tabs instead of spaces
 let g:prettier#config#tab_width = 4
 let g:prettier#config#semi = 'false'
