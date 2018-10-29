@@ -27,7 +27,6 @@ Plugin 'easymotion/vim-easymotion'
 Plugin 'aykamko/vim-easymotion-segments'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'tmhedberg/matchit'
-Plugin 'Yggdroot/indentLine'
 Plugin 'godlygeek/tabular'
 Plugin 'vim-scripts/loremipsum'
 Plugin 'Rename2'
@@ -133,10 +132,6 @@ hi Normal ctermbg=none
 hi NonText ctermbg=none
 
 " == PLUGIN CONFIGURATION ==
-" vim-indent-guides
-let g:indent_guides_enable_on_vim_startup = 1
-" retain vanilla conceal settings for indentLine
-let g:indentLine_setConceal = 0
 " vim-prettier setup
 let g:prettier#config#print_width = 80
 let g:prettier#exec_cmd_async = 1 " asynchronous formatting
