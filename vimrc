@@ -87,8 +87,8 @@ function! Expander()
 endfunction
 
 " == CORE FUNCTIONALITY CONFIGURATION ==
-" line numbers
-set number
+" hybrid line numbers, display current line as absolute, rest as relative
+set number relativenumber
 " reload files changed outside vim
 set autoread
 " utf-8 encoding
@@ -185,6 +185,13 @@ if has('autocmd')
 
   autocmd FileType javascript.jsx JsPreTmpl css
 endif
+
+" only show relative line numbers in active window and insert mode
+augroup numbertoggle
+  autocmd!
+  autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
+  autocmd BufLeave,FocusLost,InsertEnter * set norelativenumber
+augroup END
 
 " == KEY MAPPING ==
 " window manipulation maps
