@@ -32,6 +32,8 @@ Plugin 'vim-scripts/loremipsum'
 Plugin 'Rename2'
 Plugin 'chaoren/vim-wordmotion'
 Plugin 'calviken/vim-gdscript3'
+Plugin 'junegunn/fzf.vim'
+Plugin 'alexlafroscia/postcss-syntax.vim'
 " == WEB DEVELOPMENT PLUGINS ==
 Plugin 'mattn/emmet-vim'
 " Plugin 'ap/vim-css-color'
@@ -84,6 +86,8 @@ function! Expander()
     return "\<CR>"
   endif
 endfunction
+
+set rtp+=~/.fzf
 
 " == CORE FUNCTIONALITY CONFIGURATION ==
 " hybrid line numbers, display current line as absolute, rest as relative
