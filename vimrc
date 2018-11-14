@@ -19,6 +19,7 @@ Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-eunuch'
+Plugin 'tpope/vim-unimpaired'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'wellle/targets.vim'
 Plugin 'SirVer/ultisnips'
@@ -219,7 +220,7 @@ map <C-l> <C-w>l
 " bind NERDTree to Ctrl+n
 map <C-n> :NERDTreeToggle<CR>
 " temporarily remove search highlighting
-nnoremap <CR> :noh<CR>
+" nnoremap <CR> :noh<CR>
 " map Expander to <CR> in insert mode
 inoremap <expr> <CR> Expander()
 " * doesnt jump forward
