@@ -35,6 +35,7 @@ Plugin 'chaoren/vim-wordmotion'
 Plugin 'calviken/vim-gdscript3'
 Plugin 'junegunn/fzf.vim'
 Plugin 'alexlafroscia/postcss-syntax.vim'
+Plugin 'mileszs/ack.vim'
 " == WEB DEVELOPMENT PLUGINS ==
 Plugin 'mattn/emmet-vim'
 " Plugin 'ap/vim-css-color'
