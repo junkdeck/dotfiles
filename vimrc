@@ -138,6 +138,10 @@ hi Normal ctermbg=none
 hi NonText ctermbg=none
 
 " == PLUGIN CONFIGURATION ==
+" let vim-ack use Ag (if exists)
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif
 " vim-prettier setup
 let g:prettier#config#print_width = 80
 let g:prettier#exec_cmd_async = 1 " asynchronous formatting
@@ -211,6 +215,8 @@ nnoremap <leader>gb :Git branch<Space>
 nnoremap <leader>go :Git checkout<Space>
 nnoremap <leader>gps :Dispatch! git push<CR>
 nnoremap <leader>gpl :Dispatch! git pull<CR>
+" Ack leader
+nnoremap <Leader>a :Ack<Space>
 " window manipulation maps
 map - <C-w>-
 map + <C-w>+
