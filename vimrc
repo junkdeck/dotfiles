@@ -217,6 +217,11 @@ nnoremap <leader>gps :Dispatch! git push<CR>
 nnoremap <leader>gpl :Dispatch! git pull<CR>
 " Ack leader
 nnoremap <Leader>a :Ack<Space>
+" Quickfix mappings
+nnoremap <Leader>co :copen 
+nnoremap <Leader>cc :cclose
+" remove search highlight
+nnoremap <Leader>n :noh
 " window manipulation maps
 map - <C-w>-
 map + <C-w>+
