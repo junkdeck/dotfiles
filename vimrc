@@ -218,10 +218,10 @@ nnoremap <leader>gpl :Dispatch! git pull<CR>
 " Ack leader
 nnoremap <Leader>a :Ack<Space>
 " Quickfix mappings
-nnoremap <Leader>co :copen 
-nnoremap <Leader>cc :cclose
+nnoremap <Leader>co :copen<CR>
+nnoremap <Leader>cc :cclose<CR>
 " remove search highlight
-nnoremap <Leader>n :noh
+nnoremap <Leader>n :noh<CR>
 " window manipulation maps
 map - <C-w>-
 map + <C-w>+
