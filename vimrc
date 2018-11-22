@@ -212,7 +212,7 @@ nnoremap <leader>gw :Gwrite<CR><CR>
 nnoremap <leader>gl :silent! Glog<CR>:bot copen<CR>
 nnoremap <leader>gp :Ggrep<Space>
 nnoremap <leader>gm :Gmove<Space>
-nnoremap <leader>gb :Git branch<Space>
+nnoremap <leader>gb :Gblame<CR>
 nnoremap <leader>go :Git checkout<Space>
 nnoremap <leader>gps :Dispatch! git push<CR>
 nnoremap <leader>gpl :Dispatch! git pull<CR>
@@ -230,8 +230,6 @@ map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-h> <C-w>h
 map <C-l> <C-w>l
-" bind NERDTree to Ctrl+n
-map <C-n> :NERDTreeToggle<CR>
 " temporarily remove search highlighting
 " nnoremap <CR> :noh<CR>
 " map Expander to <CR> in insert mode
