@@ -11,7 +11,6 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 " == GENERIC-USE / AUGMENTING PLUGINS
 Plugin 'vim-scripts/L9'
-Plugin 'scrooloose/nerdtree'
 Plugin 'chriskempson/base16-vim'
 Plugin 'Yggdroot/LeaderF'
 Plugin 'itchyny/lightline.vim'
