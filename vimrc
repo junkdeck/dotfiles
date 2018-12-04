@@ -37,6 +37,7 @@ Plugin 'junegunn/fzf.vim'
 Plugin 'alexlafroscia/postcss-syntax.vim'
 Plugin 'mileszs/ack.vim'
 Plugin 'jreybert/vimagit'
+Plugin 'NLKNguyen/c-syntax.vim'
 " == WEB DEVELOPMENT PLUGINS ==
 Plugin 'mattn/emmet-vim'
 " Plugin 'ap/vim-css-color'
