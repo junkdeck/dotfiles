@@ -37,6 +37,7 @@ Plugin 'alexlafroscia/postcss-syntax.vim'
 Plugin 'mileszs/ack.vim'
 Plugin 'jreybert/vimagit'
 Plugin 'NLKNguyen/c-syntax.vim'
+Plugin 'sodapopcan/vim-twiggy'
 " == WEB DEVELOPMENT PLUGINS ==
 Plugin 'mattn/emmet-vim'
 " Plugin 'ap/vim-css-color'
@@ -52,6 +53,7 @@ Plugin 'isRuslan/vim-es6'
 Plugin 'Quramy/vim-js-pretty-template'
 " Plugin 'alampros/vim-styled-jsx'
 Plugin 'hail2u/vim-css3-syntax'
+Plugin 'styled-components/vim-styled-components'
 " Plugin 'posva/vim-vue'
 
 " All plugins must be added before following line
@@ -115,10 +117,10 @@ set scrolloff=4
 " backspace fix
 set backspace=indent,eol,start
 " indentation
-set expandtab		      " spaces instead of tabs
-set autoindent		    " autoindents based on above
+set expandtab         " spaces instead of tabs
+set autoindent        "autoindents based on above
 set tabstop=2         " inserts x spaces when tab is pressed
-set softtabstop=2	    " insert-mode, xspace tabs
+set softtabstop=2     " insert-mode, xspace tabs
 set shiftwidth=2      " indentation space characters
 " tab characters
 set list
@@ -148,8 +150,8 @@ let g:prettier#config#print_width = 80
 let g:prettier#exec_cmd_async = 1 " asynchronous formatting
 let g:prettier#autoformat = 0 " disable formatting off iles that have @format tag
 " autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue PrettierAsync
-let g:prettier#config#use_tabs = 'true' "ugh use tabs instead of spaces
-let g:prettier#config#tab_width = 4
+"let g:prettier#config#use_tabs = 'true' "ugh use tabs instead of spaces
+let g:prettier#config#tab_width = 2
 let g:prettier#config#semi = 'false'
 " vim-jsx works on js files and jsx
 let g:jsx_ext_required = 0
@@ -158,7 +160,7 @@ let g:glsl_file_extensions = '*.shader'
 " UltiSnips options
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<C-b>"
-let g:UltiSnipsJumpBackwardTrigger="<C-z"
+let g:UltiSnipsJumpBackwardTrigger="<C-z>"
 let g:UltiSnipsEditSplit="vertical"
 " redefine emmet key - trailing , still needed!
 let g:user_emmet_leader_key='<C-e>'
