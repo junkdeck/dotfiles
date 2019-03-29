@@ -153,6 +153,7 @@ let g:prettier#autoformat = 0 " disable formatting off iles that have @format ta
 "let g:prettier#config#use_tabs = 'true' "ugh use tabs instead of spaces
 let g:prettier#config#tab_width = 2
 let g:prettier#config#semi = 'false'
+let g:prettier#config#bracket_spacing = 'true'
 " vim-jsx works on js files and jsx
 let g:jsx_ext_required = 0
 " vim-glsl 
