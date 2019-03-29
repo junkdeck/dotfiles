@@ -239,3 +239,5 @@ map <C-l> <C-w>l
 inoremap <expr> <CR> Expander()
 " * doesnt jump forward
 nnoremap * *``
+" terminal mapping
+tnoremap <Esc> <C-\><C-n> " exits terminal mode
