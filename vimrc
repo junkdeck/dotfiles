@@ -1,77 +1,65 @@
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
 " disable vi compatibility
 set nocompatible
-" == VUNDLE SETUP ==
-filetype off
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+call plug#begin('~/.vim/plugged')
 
-" let vundle manage Vundle
-Plugin 'VundleVim/Vundle.vim'
+" add vim-plug for helpfiles
+Plug 'junegunn/vim-plug'
 " == GENERIC-USE / AUGMENTING PLUGINS
-Plugin 'vim-scripts/L9'
-Plugin 'chriskempson/base16-vim'
-Plugin 'Yggdroot/LeaderF'
-Plugin 'itchyny/lightline.vim'
-Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-repeat'
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-eunuch'
-Plugin 'tpope/vim-unimpaired'
-Plugin 'jiangmiao/auto-pairs'
-Plugin 'wellle/targets.vim'
-Plugin 'SirVer/ultisnips'
-Plugin 'junkdeck/vim-snippets'
-Plugin 'easymotion/vim-easymotion'
-Plugin 'aykamko/vim-easymotion-segments'
-Plugin 'tomtom/tcomment_vim'
-Plugin 'tmhedberg/matchit'
-Plugin 'godlygeek/tabular'
-Plugin 'vim-scripts/loremipsum'
-Plugin 'Rename2'
-Plugin 'chaoren/vim-wordmotion'
-Plugin 'calviken/vim-gdscript3'
-Plugin 'junegunn/fzf.vim'
-Plugin 'alexlafroscia/postcss-syntax.vim'
-Plugin 'mileszs/ack.vim'
-Plugin 'jreybert/vimagit'
-Plugin 'NLKNguyen/c-syntax.vim'
-Plugin 'sodapopcan/vim-twiggy'
+Plug 'vim-scripts/L9'
+Plug 'chriskempson/base16-vim'
+Plug 'Yggdroot/LeaderF'
+Plug 'itchyny/lightline.vim'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-eunuch'
+Plug 'tpope/vim-unimpaired'
+Plug 'jiangmiao/auto-pairs'
+Plug 'wellle/targets.vim'
+Plug 'SirVer/ultisnips'
+Plug 'junkdeck/vim-snippets'
+Plug 'easymotion/vim-easymotion'
+Plug 'aykamko/vim-easymotion-segments'
+Plug 'tomtom/tcomment_vim'
+Plug 'tmhedberg/matchit'
+Plug 'godlygeek/tabular'
+Plug 'vim-scripts/loremipsum'
+Plug 'ReekenX/vim-rename2'
+Plug 'chaoren/vim-wordmotion'
+Plug 'calviken/vim-gdscript3'
+Plug 'junegunn/fzf.vim'
+Plug 'alexlafroscia/postcss-syntax.vim'
+Plug 'mileszs/ack.vim'
+Plug 'jreybert/vimagit'
+Plug 'NLKNguyen/c-syntax.vim'
 " == WEB DEVELOPMENT PLUGINS ==
-Plugin 'mattn/emmet-vim'
-" Plugin 'ap/vim-css-color'
-Plugin 'prettier/vim-prettier'
-Plugin 'wesQ3/vim-windowswap'
-Plugin 'mattn/webapi-vim'
+Plug 'mattn/emmet-vim'
+" Plug 'ap/vim-css-color'
+Plug 'prettier/vim-prettier'
+Plug 'wesQ3/vim-windowswap'
+Plug 'mattn/webapi-vim'
 " == SYNTAX / HIGHLIGHTING  ==
-Plugin 'moll/vim-node'
-Plugin 'pangloss/vim-javascript'
-" Plugin 'MaxMEllon/vim-jsx-pretty'
-Plugin 'mxw/vim-jsx'
-Plugin 'isRuslan/vim-es6'
-Plugin 'Quramy/vim-js-pretty-template'
-" Plugin 'alampros/vim-styled-jsx'
-Plugin 'hail2u/vim-css3-syntax'
-Plugin 'styled-components/vim-styled-components'
-" Plugin 'posva/vim-vue'
+Plug 'moll/vim-node'
+Plug 'pangloss/vim-javascript'
+" Plug 'MaxMEllon/vim-jsx-pretty'
+Plug 'mxw/vim-jsx'
+Plug 'isRuslan/vim-es6'
+Plug 'Quramy/vim-js-pretty-template'
+" Plug 'alampros/vim-styled-jsx'
+Plug 'hail2u/vim-css3-syntax'
+" Plug 'posva/vim-vue'
 
 " All plugins must be added before following line
-call vundle#end()
-" enable plugins and indentations
-filetype plugin indent on
-" syntax highlighting
-syntax on
+call plug#end()
 
-" Vundle help
-"	:PluginList 		- lists all configured plugins
-"	:PluginInstall		- installs plugins - append `!` to update
-"	:PluginUpdate		- updates plugins
-"	:PluginSearch foo	- searches for `foo` - append `!` to refresh local cache
-"	:PluginClean		- confirms removal of unused plugins - append `!` to auto-approve removal 
-"	:h vundle		- more details
-"
-"	CUSTOM FUNCTIONS
+" CUSTOM FUNCTIONS
 " HTML-TAG AUTOINDENT ON <CR>
 " snippet from https://stackoverflow.com/a/18066591/4881742
 function! Expander()
@@ -118,7 +106,7 @@ set scrolloff=4
 set backspace=indent,eol,start
 " indentation
 set expandtab         " spaces instead of tabs
-set autoindent        "autoindents based on above
+set autoindent        " autoindents based on above
 set tabstop=2         " inserts x spaces when tab is pressed
 set softtabstop=2     " insert-mode, xspace tabs
 set shiftwidth=2      " indentation space characters
@@ -133,6 +121,8 @@ set noshowmode
 set ignorecase
 " ignores case on lowercase, case sensitive on uppercase
 set smartcase
+" disables esckeys (removes delay when 'O'pening new line)
+"set noesckeys 
 " set color scheme
 let base16colorspace=256
 colorscheme base16-default-dark 
@@ -183,17 +173,17 @@ let g:lightline = {
   \},
 \}
 " == TEMPLATE LITERAL HIGHLIGHTING ==
-if has('autocmd')
-  " Support `-` in css property names
-  augroup VimCSS3Syntax
-    autocmd!
-    autocmd FileType css setlocal iskeyword+=-
-  augroup END
-
-  call jspretmpl#register_tag('css', 'scss')
-
-  autocmd FileType javascript.jsx JsPreTmpl css
-endif
+" if has('autocmd')
+"   " Support `-` in css property names
+"   augroup VimCSS3Syntax
+"     autocmd!
+"     autocmd FileType css setlocal iskeyword+=-
+"   augroup END
+"
+"   call jspretmpl#register_tag('css', 'scss')
+"
+"   autocmd FileType javascript.jsx JsPreTmpl css
+" endif
 
 " only show relative line numbers in active window and insert mode
 augroup numbertoggle
