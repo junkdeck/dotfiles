@@ -122,8 +122,8 @@ set noshowmode
 set ignorecase
 " ignores case on lowercase, case sensitive on uppercase
 set smartcase
-" disables esckeys (removes delay when 'O'pening new line)
-"set noesckeys 
+" enable motions for tilde (case operator)
+set tildeop
 " set color scheme
 let base16colorspace=256
 colorscheme base16-default-dark 
