@@ -11,6 +11,9 @@ call plug#begin('~/.vim/plugged')
 
 " add vim-plug for helpfiles
 Plug 'junegunn/vim-plug'
+" == LOVE2D ==
+Plug 'davisdude/vim-love-docs'
+Plug 'alols/vim-love-efm'
 " == GENERIC-USE / AUGMENTING PLUGINS
 Plug 'vim-scripts/L9'
 Plug 'chriskempson/base16-vim'
@@ -194,6 +197,8 @@ augroup numbertoggle
 augroup END
 
 " == KEY MAPPING ==
+" launch love in current directory
+nnoremap <leader>l :silent !love .<CR>
 " fugitive maps
 nnoremap <leader>ga :Git add %:p<CR><CR>
 nnoremap <leader>gs :Gstatus<CR>
