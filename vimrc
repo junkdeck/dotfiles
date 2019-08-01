@@ -37,9 +37,9 @@ Plug 'vim-scripts/loremipsum'
 Plug 'ReekenX/vim-rename2'
 Plug 'chaoren/vim-wordmotion'
 Plug 'calviken/vim-gdscript3'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'alexlafroscia/postcss-syntax.vim'
-Plug 'mileszs/ack.vim'
 Plug 'jreybert/vimagit'
 Plug 'NLKNguyen/c-syntax.vim'
 Plug 'cespare/vim-toml'
@@ -220,7 +220,7 @@ nnoremap <leader>go :Git checkout<Space>
 nnoremap <leader>gps :Dispatch! git push<CR>
 nnoremap <leader>gpl :Dispatch! git pull<CR>
 " Ack leader
-nnoremap <Leader>a :Ack<Space>
+nnoremap <Leader>a :Ag<Space>
 " Quickfix mappings
 nnoremap <Leader>co :copen<CR>
 nnoremap <Leader>cc :cclose<CR>
