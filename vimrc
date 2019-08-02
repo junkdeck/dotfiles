@@ -15,6 +15,7 @@ Plug 'junegunn/vim-plug'
 Plug 'davisdude/vim-love-docs'
 Plug 'alols/vim-love-efm'
 " == GENERIC-USE / AUGMENTING PLUGINS
+Plug 'jdonaldson/vaxe'
 Plug 'vim-scripts/L9'
 Plug 'chriskempson/base16-vim'
 Plug 'Yggdroot/LeaderF'
