@@ -11,6 +11,7 @@ call plug#begin('~/.vim/plugged')
 
 " add vim-plug for helpfiles
 Plug 'junegunn/vim-plug'
+Plug 'w0rp/ale'
 " == LOVE2D ==
 Plug 'davisdude/vim-love-docs'
 Plug 'alols/vim-love-efm'
@@ -181,6 +182,28 @@ let g:lightline = {
   \'gitbranch': 'fugitive#head'
   \},
 \}
+
+" ALE config
+let g:ale_lint_on_save = 1
+let g:ale_fix_on_save = 1
+
+let g:ale_javascript_eslint_use_global = 1
+let g:ale_javascript_eslint_executable = 'eslint_d'
+" let g:ale_javascript_eslint_options = ''
+
+let g:ale_linters = {
+\ 'javascript': ['eslint'],
+\ 'javascript.jsx': ['eslint'],
+\}
+
+let g:ale_fixers = {
+\ 'javascript': ['eslint'],
+\ 'javascript.jsx': ['eslint'],
+\}
+
+let g:ale_set_signs = 0
+let g:ale_disable_lsp = 1
+
 " == TEMPLATE LITERAL HIGHLIGHTING ==
 " if has('autocmd')
 "   " Support `-` in css property names
