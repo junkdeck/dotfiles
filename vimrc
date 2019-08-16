@@ -133,6 +133,8 @@ set ignorecase
 set smartcase
 " enable motions for tilde (case operator)
 set tildeop
+" highlight current cursor position
+set cursorline
 " set color scheme
 let base16colorspace=256
 colorscheme base16-default-dark 
@@ -197,8 +199,8 @@ let g:ale_linters = {
 \}
 
 let g:ale_fixers = {
-\ 'javascript': ['eslint'],
-\ 'javascript.jsx': ['eslint'],
+\ 'javascript': ['eslint', 'prettier'],
+\ 'javascript.jsx': ['eslint', 'prettier'],
 \}
 
 let g:ale_set_signs = 0
@@ -265,3 +267,8 @@ inoremap <expr> <CR> Expander()
 nnoremap * *``
 " terminal mapping
 tnoremap <Esc> <C-\><C-n> " exits terminal mode
+"ALE MAPPINGS
+nmap <silent> <C-k> <Plug>(ale_previous_wrap)
+nmap <silent> <C-j> <Plug>(ale_next_wrap)
+" == COMMAND ==
+command AbsSource %s/\(\.\.\/\)\+/src\//g
