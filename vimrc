@@ -137,7 +137,7 @@ set tildeop
 set cursorline
 " set color scheme
 let base16colorspace=256
-colorscheme base16-default-dark 
+colorscheme base16-gruvbox-dark-soft
 " disables opague background
 hi Normal ctermbg=none
 hi NonText ctermbg=none
@@ -205,6 +205,8 @@ let g:ale_fixers = {
 
 let g:ale_set_signs = 0
 let g:ale_disable_lsp = 1
+
+hi link ALEError Error
 
 " == TEMPLATE LITERAL HIGHLIGHTING ==
 " if has('autocmd')
