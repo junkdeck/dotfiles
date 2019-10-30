@@ -189,18 +189,20 @@ let g:lightline = {
 let g:ale_lint_on_save = 1
 let g:ale_fix_on_save = 1
 
-let g:ale_javascript_eslint_use_global = 1
-let g:ale_javascript_eslint_executable = 'eslint_d'
+" let g:ale_javascript_eslint_use_global = 1
+" let g:ale_javascript_eslint_executable = 'eslint_d'
 " let g:ale_javascript_eslint_options = ''
 
 let g:ale_linters = {
 \ 'javascript': ['eslint'],
 \ 'javascript.jsx': ['eslint'],
+\ 'ruby': ['standardrb']
 \}
 
 let g:ale_fixers = {
 \ 'javascript': ['eslint', 'prettier'],
 \ 'javascript.jsx': ['eslint', 'prettier'],
+\ 'ruby': ['standardrb']
 \}
 
 let g:ale_set_signs = 0
