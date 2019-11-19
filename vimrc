@@ -136,6 +136,7 @@ set smartcase
 set tildeop
 " highlight current cursor position
 set cursorline
+
 " set color scheme
 let base16colorspace=256
 colorscheme base16-gruvbox-dark-soft
@@ -197,13 +198,15 @@ let g:ale_fix_on_save = 1
 let g:ale_linters = {
 \ 'javascript': ['eslint'],
 \ 'javascript.jsx': ['eslint'],
-\ 'ruby': ['standardrb']
+\ 'ruby': ['standardrb'],
+\ 'css': ['prettier']
 \}
 
 let g:ale_fixers = {
 \ 'javascript': ['eslint', 'prettier'],
 \ 'javascript.jsx': ['eslint', 'prettier'],
-\ 'ruby': ['standardrb']
+\ 'ruby': ['standardrb'],
+\ 'css': ['prettier']
 \}
 
 let g:ale_set_signs = 0
