@@ -49,6 +49,7 @@ Plug 'cespare/vim-toml'
 Plug 'dart-lang/dart-vim-plugin'
 Plug 'thosakwe/vim-flutter'
 " == WEB DEVELOPMENT PLUGINS ==
+Plug 'tpope/vim-rails'
 Plug 'mattn/emmet-vim'
 " Plug 'ap/vim-css-color'
 Plug 'prettier/vim-prettier'
