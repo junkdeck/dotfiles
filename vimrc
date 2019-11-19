@@ -58,8 +58,7 @@ Plug 'mattn/webapi-vim'
 " == SYNTAX / HIGHLIGHTING  ==
 Plug 'moll/vim-node'
 Plug 'pangloss/vim-javascript'
-" Plug 'MaxMEllon/vim-jsx-pretty'
-Plug 'mxw/vim-jsx'
+Plug 'MaxMEllon/vim-jsx-pretty'
 Plug 'isRuslan/vim-es6'
 Plug 'Quramy/vim-js-pretty-template'
 Plug 'styled-components/vim-styled-components', {'branch': 'main'}
@@ -149,6 +148,10 @@ hi NonText ctermbg=none
 if executable('ag')
   let g:ackprg = 'ag --vimgrep'
 endif
+
+" sets jsx Component brackets to same color as component name
+hi link jsxCloseString Function
+
 " vim-prettier setup
 let g:prettier#config#print_width = 80
 let g:prettier#exec_cmd_async = 1 " asynchronous formatting
