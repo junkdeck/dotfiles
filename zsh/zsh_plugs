@@ -1,0 +1,10 @@
+zsh-users/zsh-completions
+zsh-users/zsh-syntax-highlighting
+zsh-users/zsh-history-substring-search
+
+caarlos0/zsh-open-github-pr
+
+robbyrussell/oh-my-zsh
+robbyrussell/oh-my-zsh path:lib
+robbyrussell/oh-my-zsh path:themes/bira.zsh-theme
+robbyrussell/oh-my-zsh path:plugins/git
