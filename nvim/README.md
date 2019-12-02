@@ -2,6 +2,6 @@
 
 pop `init.vim` into `~/.config/nvim/init.vim`
 
-put `vimrc` into `~/.vim/vimrc`
+symlink `vimrc` to `~/.vim/vimrc`
 
 vim-plug installs itself on first run and then you're good to go!

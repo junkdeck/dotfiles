@@ -1,8 +1,8 @@
 # zsh dotfile
 
-pop `zshrc` into `~/.zshrc`
+symlink `zshrc` to `~/.zshrc`
 
-put `zsh_plugs` into `~/.zsh_plugs`
+symlink `zsh_plugs` to `~/.zsh_plugs`
 
 install `antibody`
 
