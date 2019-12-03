@@ -81,6 +81,9 @@ alias adroid="adbfs /mnt/droid"
 alias udroid="fusermount -u /mnt/droid"
 
 alias rff="rake test_failfast"
+alias rs="rails server"
+alias rc="rails console"
+alias rdb="rails db"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
