@@ -84,6 +84,7 @@ alias rff="rake test_failfast"
 alias rs="rails server"
 alias rc="rails console"
 alias rdb="rails db"
+alias rdm="rails db:migrate"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
