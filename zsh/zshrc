@@ -21,6 +21,7 @@ HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
 setopt autocd extendedglob nomatch nocaseglob
+setopt share_history
 unsetopt beep
 # End of lines configured by zsh-newuser-install
 export ANDROID_HOME=$HOME/Android/Sdk
