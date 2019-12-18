@@ -87,5 +87,13 @@ alias rc="rails console"
 alias rdb="rails db"
 alias rdm="rails db:migrate"
 
+alias dc="docker-compose"
+alias dcu="dc up"
+alias dcrm="dc rm"
+
+function dbash() {
+  docker exec -it $1 /bin/bash
+}
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
