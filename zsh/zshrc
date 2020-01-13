@@ -39,9 +39,9 @@ export PATH=$PATH:$HOME/.local/share/flutter/bin
 
 # Yarn global bin\
 export PATH="$PATH:$HOME/.yarn/bin"
-#
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
+
+# add rbenv to path
+export PATH="$HOME/.rbenv/bin:$PATH"
 
 export N_PREFIX=$HOME/.n
 export PATH="$PATH:$N_PREFIX/bin"
