@@ -13,9 +13,10 @@ call plug#begin('~/.vim/plugged')
 Plug 'junegunn/vim-plug'
 Plug 'w0rp/ale'
 " == LOVE2D ==
-Plug 'davisdude/vim-love-docs'
+Plug 'davisdude/vim-love-docs', { 'branch': 'build' }
 Plug 'alols/vim-love-efm'
 " == GENERIC-USE / AUGMENTING PLUGINS
+Plug 'tbastos/vim-lua'
 Plug 'jdonaldson/vaxe'
 Plug 'vim-scripts/L9'
 Plug 'chriskempson/base16-vim'
