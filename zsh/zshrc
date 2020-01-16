@@ -21,7 +21,7 @@ compinit
 HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
-setopt autocd extendedglob nomatch nocaseglob
+setopt autocd extendedglob nomatch nocaseglob dotglob
 setopt share_history
 unsetopt beep
 # End of lines configured by zsh-newuser-install
