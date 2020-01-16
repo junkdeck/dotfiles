@@ -85,6 +85,9 @@ alias yl="ga yarn.lock && gcmsg \"yarn.lock\""
 alias adroid="adbfs /mnt/droid"
 alias udroid="fusermount -u /mnt/droid"
 
+alias rails="bundle exec rails"
+alias rake="bundle exec rake"
+
 alias rff="rake test_failfast"
 alias rs="rails server"
 alias rc="rails console"
