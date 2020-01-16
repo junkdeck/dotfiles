@@ -71,6 +71,9 @@ alias gpr="git push && open-pr"
 alias gprm="git push && open-pr master"
 alias grbim="git rebase -i master"
 
+alias gop="git-open"
+alias goom="gop origin master"
+
 # wholesome mode activate
 alias please="sudo"
 
