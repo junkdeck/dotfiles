@@ -4,6 +4,8 @@ zsh-users/zsh-history-substring-search
 
 caarlos0/zsh-open-github-pr
 
+paulirish/git-open
+
 robbyrussell/oh-my-zsh
 robbyrussell/oh-my-zsh path:lib
 robbyrussell/oh-my-zsh path:themes/bira.zsh-theme
