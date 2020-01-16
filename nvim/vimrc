@@ -136,6 +136,9 @@ set smartcase
 set tildeop
 " highlight current cursor position
 set cursorline
+" enables persistent undo per-file
+set undofile
+set undodir=~/.config/nvim/undodir
 
 " set color scheme
 let base16colorspace=256
