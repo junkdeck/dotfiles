@@ -12,6 +12,7 @@ call plug#begin('~/.vim/plugged')
 " add vim-plug for helpfiles
 Plug 'junegunn/vim-plug'
 Plug 'w0rp/ale'
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 " == LOVE2D ==
 Plug 'davisdude/vim-love-docs', { 'branch': 'build' }
 Plug 'alols/vim-love-efm'
@@ -152,6 +153,9 @@ hi NonText ctermbg=none
 if executable('ag')
   let g:ackprg = 'ag --vimgrep'
 endif
+
+" Enable deoplete
+let g:deoplete#enable_at_startup = 1
 
 " sets jsx Component brackets to same color as component name
 hi link jsxCloseString Function
