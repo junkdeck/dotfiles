@@ -97,6 +97,7 @@ alias rdm="rails db:migrate"
 alias dc="docker-compose"
 alias dcu="dc up"
 alias dcrm="dc rm"
+alias dkill="docker kill $(docker ps -q)"
 
 function dbash() {
   docker exec -it $1 /bin/bash
