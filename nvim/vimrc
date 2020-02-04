@@ -11,14 +11,10 @@ call plug#begin('~/.vim/plugged')
 
 " add vim-plug for helpfiles
 Plug 'junegunn/vim-plug'
+
+" == GENERIC-USE / AUGMENTING PLUGINS
 Plug 'w0rp/ale'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-" == LOVE2D ==
-Plug 'davisdude/vim-love-docs', { 'branch': 'build' }
-Plug 'alols/vim-love-efm'
-" == GENERIC-USE / AUGMENTING PLUGINS
-Plug 'tbastos/vim-lua'
-Plug 'jdonaldson/vaxe'
 Plug 'vim-scripts/L9'
 Plug 'chriskempson/base16-vim'
 Plug 'Yggdroot/LeaderF'
@@ -36,37 +32,25 @@ Plug 'easymotion/vim-easymotion'
 Plug 'aykamko/vim-easymotion-segments'
 Plug 'tomtom/tcomment_vim'
 Plug 'tmhedberg/matchit'
-Plug 'godlygeek/tabular'
-Plug 'vim-scripts/loremipsum'
-Plug 'ReekenX/vim-rename2'
 Plug 'chaoren/vim-wordmotion'
-Plug 'calviken/vim-gdscript3'
+" Plug 'calviken/vim-gdscript3'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'alexlafroscia/postcss-syntax.vim'
-Plug 'jreybert/vimagit'
-Plug 'NLKNguyen/c-syntax.vim'
-Plug 'cespare/vim-toml'
-" == FLUTTER =
-Plug 'dart-lang/dart-vim-plugin'
-Plug 'thosakwe/vim-flutter'
+
 " == WEB DEVELOPMENT PLUGINS ==
 Plug 'tpope/vim-rails'
 Plug 'mattn/emmet-vim'
-" Plug 'ap/vim-css-color'
-Plug 'prettier/vim-prettier'
-Plug 'wesQ3/vim-windowswap'
-Plug 'mattn/webapi-vim'
+
 " == SYNTAX / HIGHLIGHTING  ==
+Plug 'alexlafroscia/postcss-syntax.vim'
+Plug 'agfline/c-syntax.vim'
 Plug 'moll/vim-node'
 Plug 'pangloss/vim-javascript'
 Plug 'MaxMEllon/vim-jsx-pretty'
 Plug 'isRuslan/vim-es6'
 Plug 'Quramy/vim-js-pretty-template'
 Plug 'styled-components/vim-styled-components', {'branch': 'main'}
-" Plug 'alampros/vim-styled-jsx'
 Plug 'hail2u/vim-css3-syntax'
-" Plug 'posva/vim-vue'
 
 " All plugins must be added before following line
 call plug#end()
