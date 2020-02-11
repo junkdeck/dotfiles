@@ -99,6 +99,8 @@ alias dcu="dc up"
 alias dcrm="dc rm"
 alias dkill="docker kill $(docker ps -q)"
 
+alias rnab="cd android/app/build/outputs/apk/release"
+
 function dbash() {
   docker exec -it $1 /bin/bash
 }
