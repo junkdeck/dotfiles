@@ -103,6 +103,8 @@ alias dcrm="dc rm"
 alias rnab="cd android/app/build/outputs/apk/release"
 alias undo="grhh HEAD~1"
 
+alias readme="less README.md"
+
 function dkill() {
   docker kill $(docker ps -q)
 }
