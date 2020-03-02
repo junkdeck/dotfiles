@@ -16,6 +16,7 @@ zstyle :compinstall filename '/home/fred/.zshrc'
 
 autoload -Uz compinit
 compinit
+
 # End of lines added by compinstall
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
@@ -96,6 +97,7 @@ alias rdm="rails db:migrate"
 
 alias dc="docker-compose"
 alias dcu="dc up"
+alias dcd="dc down"
 alias dcrm="dc rm"
 alias dkill="docker kill $(docker ps -q)"
 
