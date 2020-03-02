@@ -201,7 +201,8 @@ let g:ale_fixers = {
 \ 'javascript': ['eslint', 'prettier'],
 \ 'javascript.jsx': ['eslint', 'prettier'],
 \ 'ruby': ['standardrb'],
-\ 'css': ['prettier']
+\ 'css': ['prettier'],
+\ 'c':  ['clang-format']
 \}
 
 let g:ale_set_signs = 0
