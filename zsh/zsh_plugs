@@ -11,3 +11,5 @@ robbyrussell/oh-my-zsh path:lib
 robbyrussell/oh-my-zsh path:themes/bira.zsh-theme
 robbyrussell/oh-my-zsh path:plugins/git
 robbyrussell/oh-my-zsh path:plugins/extract
+robbyrussell/oh-my-zsh path:plugins/docker
+robbyrussell/oh-my-zsh path:plugins/docker-compose
