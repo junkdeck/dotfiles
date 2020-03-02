@@ -99,10 +99,17 @@ alias dc="docker-compose"
 alias dcu="dc up"
 alias dcd="dc down"
 alias dcrm="dc rm"
-alias dkill="docker kill $(docker ps -q)"
 
 alias rnab="cd android/app/build/outputs/apk/release"
 alias undo="grhh HEAD~1"
+
+function dkill() {
+  docker kill $(docker ps -q)
+}
+
+function drm() {
+  docker rm $(docker ps -qa)
+}
 
 function dbash() {
   docker exec -it $1 /bin/bash
