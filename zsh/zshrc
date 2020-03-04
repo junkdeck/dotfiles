@@ -88,6 +88,7 @@ alias udroid="fusermount -u /mnt/droid"
 
 alias rails="bundle exec rails"
 alias rake="bundle exec rake"
+alias rspec="bundle exec rspec"
 
 alias rff="rake test_failfast"
 alias rs="rails server"
