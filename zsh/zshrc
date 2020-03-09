@@ -64,7 +64,7 @@ alias vimconf="nvim /home/fred/.vim/vimrc"
 alias vimplug="nvim +PlugInstall +PlugClean +qa"
 alias vimupd="nvim +PlugUpdate +qa"
 
-alias gr="grep -r"
+alias gr="grep -r -i"
 
 alias gpsu="git push --set-upstream origin"
 alias gbm="git branch --merged"
