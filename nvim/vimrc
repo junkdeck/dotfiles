@@ -13,6 +13,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'junegunn/vim-plug'
 
 " == GENERIC-USE / AUGMENTING PLUGINS
+Plug 'janko/vim-test'
 Plug 'w0rp/ale'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'vim-scripts/L9'
@@ -233,6 +234,10 @@ augroup END
 " == KEY MAPPING ==
 " launch love in current directory
 nnoremap <leader>l :silent !love .<CR>
+" vim test maps
+nmap <silent> <leader>tn :TestNearest<CR>
+nmap <silent> <leader>tf :TestFile<CR>
+nmap <silent> <leader>ts :TestSuite<CR>
 " fugitive maps
 nnoremap <leader>ga :Git add %:p<CR><CR>
 nnoremap <leader>gs :Gstatus<CR>
