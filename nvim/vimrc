@@ -34,6 +34,7 @@ Plug 'aykamko/vim-easymotion-segments'
 Plug 'tomtom/tcomment_vim'
 Plug 'tmhedberg/matchit'
 Plug 'chaoren/vim-wordmotion'
+Plug 'editorconfig/editorconfig-vim'
 " Plug 'calviken/vim-gdscript3'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
