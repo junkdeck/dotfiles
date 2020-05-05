@@ -211,7 +211,10 @@ let g:ale_fixers = {
 let g:ale_set_signs = 0
 let g:ale_disable_lsp = 1
 
+" set ALE highlighting to a more sensible color
 hi link ALEError Error
+hi link ALEWarning WildMenu
+
 
 " == TEMPLATE LITERAL HIGHLIGHTING ==
 " if has('autocmd')
