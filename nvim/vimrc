@@ -126,7 +126,8 @@ set cursorline
 " enables persistent undo per-file
 set undofile
 set undodir=~/.config/nvim/undodir
-
+" sets window title to current file
+set title
 " set color scheme
 let base16colorspace=256
 colorscheme base16-gruvbox-dark-soft
