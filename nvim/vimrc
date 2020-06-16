@@ -12,6 +12,9 @@ call plug#begin('~/.vim/plugged')
 " add vim-plug for helpfiles
 Plug 'junegunn/vim-plug'
 
+" PICO-8
+Plug 'junkdeck/vim-pico8-syntax'
+Plug 'junkdeck/pico8-vim-colorscheme'
 " == GENERIC-USE / AUGMENTING PLUGINS
 Plug 'janko/vim-test'
 Plug 'w0rp/ale'
@@ -75,6 +78,12 @@ function! Expander()
     endif
   else
     return "\<CR>"
+  endif
+endfunction
+
+function! Pico8Loader()
+  if match(&filetype, '\v(lua|p8)') != -1
+    execute "silent !xdotool search --class pico key \"ctrl+r\""
   endif
 endfunction
 
@@ -236,6 +245,8 @@ augroup numbertoggle
   autocmd BufLeave,FocusLost,InsertEnter * set norelativenumber
 augroup END
 
+" update a running PICO-8 program on save
+autocmd BufWritePost * call Pico8Loader()
 " == KEY MAPPING ==
 " launch love in current directory
 nnoremap <leader>l :silent !love .<CR>
