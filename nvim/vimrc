@@ -225,18 +225,11 @@ hi link ALEError Error
 hi link ALEWarning WildMenu
 
 
-" == TEMPLATE LITERAL HIGHLIGHTING ==
-" if has('autocmd')
-"   " Support `-` in css property names
-"   augroup VimCSS3Syntax
-"     autocmd!
-"     autocmd FileType css setlocal iskeyword+=-
-"   augroup END
-"
-"   call jspretmpl#register_tag('css', 'scss')
-"
-"   autocmd FileType javascript.jsx JsPreTmpl css
-" endif
+" Automatically set Javascript files as JSX
+augroup filetype_jsx
+  autocmd!
+  autocmd FileType javascript set filetype=javascript.jsx
+augroup END
 
 " only show relative line numbers in active window and insert mode
 augroup numbertoggle
