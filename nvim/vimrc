@@ -137,6 +137,8 @@ set undofile
 set undodir=~/.config/nvim/undodir
 " sets window title to current file
 set title
+" open Gdiff in vertical split
+set diffopt+=vertical
 " set color scheme
 let base16colorspace=256
 colorscheme base16-gruvbox-dark-soft
