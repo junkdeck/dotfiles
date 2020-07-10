@@ -210,6 +210,7 @@ let g:ale_linters = {
 let g:ale_fixers = {
 \ 'javascript': ['eslint', 'prettier'],
 \ 'javascript.jsx': ['eslint', 'prettier'],
+\ 'vue': ['prettier'],
 \ 'ruby': ['standardrb'],
 \ 'css': ['prettier'],
 \ 'scss': ['prettier'],
