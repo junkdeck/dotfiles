@@ -45,12 +45,17 @@ Plug 'junegunn/fzf.vim'
 " == WEB DEVELOPMENT PLUGINS ==
 Plug 'tpope/vim-rails'
 Plug 'mattn/emmet-vim'
-Plug 'moll/vim-node'
 
 " == SYNTAX / HIGHLIGHTING  ==
-Plug 'sheerun/vim-polyglot'
-Plug 'hail2u/vim-css3-syntax'
+Plug 'alexlafroscia/postcss-syntax.vim'
+Plug 'agfline/c-syntax.vim'
+Plug 'moll/vim-node'
+Plug 'pangloss/vim-javascript'
+Plug 'MaxMEllon/vim-jsx-pretty'
+Plug 'isRuslan/vim-es6'
+Plug 'Quramy/vim-js-pretty-template'
 Plug 'styled-components/vim-styled-components', {'branch': 'main'}
+Plug 'hail2u/vim-css3-syntax'
 
 " All plugins must be added before following line
 call plug#end()
@@ -214,7 +219,6 @@ let g:ale_fixers = {
 \ 'ruby': ['standardrb'],
 \ 'css': ['prettier'],
 \ 'scss': ['prettier'],
-\ 'html': ['prettier'],
 \ 'c':  ['clang-format']
 \}
 
