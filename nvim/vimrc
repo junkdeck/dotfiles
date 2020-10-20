@@ -39,10 +39,11 @@ Plug 'tmhedberg/matchit'
 Plug 'chaoren/vim-wordmotion'
 Plug 'editorconfig/editorconfig-vim'
 " Plug 'calviken/vim-gdscript3'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf', { 'do': { -> fzf#install } }
 Plug 'junegunn/fzf.vim'
 
 " == WEB DEVELOPMENT PLUGINS ==
+Plug 'burner/vim-svelte'
 Plug 'tpope/vim-rails'
 Plug 'mattn/emmet-vim'
 
@@ -204,12 +205,16 @@ let g:ale_fix_on_save = 1
 " let g:ale_javascript_eslint_executable = 'eslint_d'
 " let g:ale_javascript_eslint_options = ''
 
+let g:ale_linter_aliases = {'svelte': ['css', 'javascript']}
+
 let g:ale_linters = {
 \ 'javascript': ['eslint'],
 \ 'javascript.jsx': ['eslint'],
 \ 'ruby': ['standardrb'],
 \ 'css': ['prettier'],
-\ 'scss': ['prettier']
+\ 'scss': ['prettier'],
+\ 'html': ['prettier'],
+\ 'svelte': ['stylelint', 'eslint']
 \}
 
 let g:ale_fixers = {
@@ -219,7 +224,9 @@ let g:ale_fixers = {
 \ 'ruby': ['standardrb'],
 \ 'css': ['prettier'],
 \ 'scss': ['prettier'],
-\ 'c':  ['clang-format']
+\ 'html': ['prettier'],
+\ 'c':  ['clang-format'],
+\ 'svelte': ['eslint', 'prettier', 'prettier_standard']
 \}
 
 let g:ale_set_signs = 0
