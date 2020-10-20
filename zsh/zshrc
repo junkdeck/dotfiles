@@ -32,6 +32,9 @@ export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/tools/bin
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 
+# add android studio to path
+export PATH=$PATH:$HOME/.local/android/bin
+
 # add Rust to path env
 export PATH=$PATH:$HOME/.cargo/bin
 
@@ -74,6 +77,7 @@ alias gpr="git push && open-pr"
 alias gprm="git push && open-pr master"
 alias gprd="git push && open-pr develop"
 alias grbim="git rebase -i master"
+alias grbid="git rebase -i develop"
 
 alias gop="git-open"
 alias goom="gop origin master"
@@ -109,6 +113,8 @@ alias undo="grhh HEAD~1"
 
 alias readme="less README.md"
 
+alias compost="composer install"
+
 function dkill() {
   docker kill $(docker ps -q)
 }
@@ -123,10 +129,6 @@ function dbash() {
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# fnm
-export PATH=/home/fred/.fnm:$PATH
-eval "`fnm env --multi`"
-#
 # add composer to PATH
 export PATH=$HOME/.config/composer/vendor/bin:$PATH
 
