@@ -115,6 +115,8 @@ alias readme="less README.md"
 
 alias compost="composer install"
 
+alias convertwebp="find ./ -name \"*.webp\" -exec dwebp {} -o {}.png \;; find . -type f -name '*.webp' -delete"
+
 function dkill() {
   docker kill $(docker ps -q)
 }
@@ -143,4 +145,4 @@ if [ -f '/home/fred/.local/share/google-cloud-sdk/completion.zsh.inc' ]; then . 
 
 
 # increase node RAM limit
-export NODE_OPTIONS=--max-old-space-size=4096
+export NODE_OPTIONS=--max-old-space-size=8192
