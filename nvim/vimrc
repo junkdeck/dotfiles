@@ -12,6 +12,8 @@ call plug#begin('~/.vim/plugged')
 " add vim-plug for helpfiles
 Plug 'junegunn/vim-plug'
 
+"vimwiki
+Plug 'vimwiki/vimwiki'
 " PICO-8
 Plug 'junkdeck/vim-pico8-syntax'
 Plug 'junkdeck/pico8-vim-colorscheme'
@@ -38,7 +40,7 @@ Plug 'tomtom/tcomment_vim'
 Plug 'tmhedberg/matchit'
 Plug 'chaoren/vim-wordmotion'
 Plug 'editorconfig/editorconfig-vim'
-" Plug 'calviken/vim-gdscript3'
+Plug 'habamax/vim-godot'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install } }
 Plug 'junegunn/fzf.vim'
 
@@ -46,6 +48,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'burner/vim-svelte'
 Plug 'tpope/vim-rails'
 Plug 'mattn/emmet-vim'
+Plug 'nelsyeung/twig.vim'
 
 " == SYNTAX / HIGHLIGHTING  ==
 Plug 'alexlafroscia/postcss-syntax.vim'
