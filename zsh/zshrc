@@ -32,8 +32,8 @@ export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/tools/bin
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 
-# add android studio to path
-export PATH=$PATH:$HOME/.local/android/bin
+# # add android studio to path
+export PATH=$PATH:$HOME/.local/android-studio/bin
 
 # add Rust to path env
 export PATH=$PATH:$HOME/.cargo/bin
@@ -43,6 +43,9 @@ export PATH=$PATH:$HOME/.local/share/flutter/bin
 
 # Yarn global bin\
 export PATH="$PATH:$HOME/.yarn/bin"
+
+# Nim
+export PATH="$PATH:$HOME/Source/Nim/bin"
 
 # add rbenv to path
 #export PATH="$HOME/.rbenv/bin:$PATH"
@@ -62,6 +65,9 @@ BASE16_SHELL=$HOME/.config/base16-shell
 # [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 # [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
+alias python="python3"
+
+alias hch="git add CHANGELOG.md && git commit -m 'add changelog entry'"
 
 alias vimconf="nvim /home/fred/.vim/vimrc"
 alias vimplug="nvim +PlugInstall +PlugClean +qa"
@@ -113,7 +119,7 @@ alias undo="grhh HEAD~1"
 
 alias readme="less README.md"
 
-alias compost="composer install"
+alias compost="composer install && php artisan config:clear && php artisan route:clear && php artisan view:clear && php artisan cache:clear"
 
 alias convertwebp="find ./ -name \"*.webp\" -exec dwebp {} -o {}.png \;; find . -type f -name '*.webp' -delete"
 
@@ -146,3 +152,11 @@ if [ -f '/home/fred/.local/share/google-cloud-sdk/completion.zsh.inc' ]; then . 
 
 # increase node RAM limit
 export NODE_OPTIONS=--max-old-space-size=8192
+
+# DEV KIT
+export DEVKITPRO=/opt/devkitpro
+export DEVKITARM=${DEVKITPRO}/devkitARM
+export DEVKITPPC=${DEVKITPRO}/devkitPPC
+
+export PATH=${DEVKITPRO}/tools/bin:$PATH
+

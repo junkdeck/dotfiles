@@ -12,6 +12,8 @@ call plug#begin('~/.vim/plugged')
 " add vim-plug for helpfiles
 Plug 'junegunn/vim-plug'
 
+Plug 'ziglang/zig.vim'
+
 "vimwiki
 Plug 'vimwiki/vimwiki'
 " PICO-8
