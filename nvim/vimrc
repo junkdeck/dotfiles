@@ -13,6 +13,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'junegunn/vim-plug'
 
 Plug 'ziglang/zig.vim'
+Plug 'karolbelina/uxntal.vim'
 
 "vimwiki
 Plug 'vimwiki/vimwiki'
@@ -20,7 +21,8 @@ Plug 'vimwiki/vimwiki'
 Plug 'junkdeck/vim-pico8-syntax'
 Plug 'junkdeck/pico8-vim-colorscheme'
 " == GENERIC-USE / AUGMENTING PLUGINS
-Plug 'janko/vim-test'
+Plug 'rust-lang/rust.vim'
+Plug 'janko/vim-test', {'commit': 'aff3607e7698ab5a94a58fdda7ecb5ec567ac293'}
 Plug 'w0rp/ale'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'vim-scripts/L9'
@@ -31,6 +33,7 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-eunuch'
+Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-unimpaired'
 Plug 'jiangmiao/auto-pairs'
 Plug 'wellle/targets.vim'
@@ -146,6 +149,7 @@ set title
 " open Gdiff in vertical split
 set diffopt+=vertical
 " set color scheme
+set mouse=
 let base16colorspace=256
 colorscheme base16-gruvbox-dark-soft
 " disables opague background
@@ -206,6 +210,8 @@ let g:lightline = {
 let g:ale_lint_on_save = 1
 let g:ale_fix_on_save = 1
 
+let g:ale_virtualtext_cursor = 'current'
+
 " let g:ale_javascript_eslint_use_global = 1
 " let g:ale_javascript_eslint_executable = 'eslint_d'
 " let g:ale_javascript_eslint_options = ''
@@ -231,11 +237,14 @@ let g:ale_fixers = {
 \ 'scss': ['prettier'],
 \ 'html': ['prettier'],
 \ 'c':  ['clang-format'],
-\ 'svelte': ['eslint', 'prettier', 'prettier_standard']
+\ 'svelte': ['eslint', 'prettier', 'prettier_standard'],
+\ 'php' : ['php_cs_fixer']
 \}
 
 let g:ale_set_signs = 0
 let g:ale_disable_lsp = 1
+
+let g:python3_host_prog = "/usr/bin/python3"
 
 " set ALE highlighting to a more sensible color
 hi link ALEError Error
@@ -257,13 +266,17 @@ augroup END
 
 " update a running PICO-8 program on save
 autocmd BufWritePost * call Pico8Loader()
+" resync syntax highlighting
+autocmd BufEnter * syntax sync fromstart
 " == KEY MAPPING ==
+nnoremap <leader>f :Leaderf file --no-auto-preview<CR>
 " launch love in current directory
 nnoremap <leader>l :silent !love .<CR>
-" vim test maps
+" vim-test maps
 nmap <silent> <leader>tn :w<CR>:TestNearest<CR>
 nmap <silent> <leader>tf :w<CR>:TestFile<CR>
 nmap <silent> <leader>ts :w<CR>:TestSuite<CR>
+nmap <silent> <leader>tl :w<CR>:TestLast<CR>
 " fugitive maps
 nnoremap <leader>ga :Git add %:p<CR><CR>
 nnoremap <leader>gs :Gstatus<CR>
