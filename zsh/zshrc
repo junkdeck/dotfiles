@@ -1,10 +1,13 @@
-xset -b b 0
+# xset -b b 0
 # faux-OHMYZSH config
 DISABLE_AUTO_UPDATE=true
-ZSH="${HOME}/.cache/antibody/https-COLON--SLASH--SLASH-github.com-SLASH-robbyrussell-SLASH-oh-my-zsh"
 
-source <(antibody init)
-antibody bundle < $HOME/.zsh_plugs
+source $(brew --prefix)/opt/antidote/share/antidote/antidote.zsh
+antidote load
+
+# source <(antibody init)
+# antibody bundle < $HOME/.zsh_plugs
+
 # disable software flow control
 stty -ixon
 # The following lines were added by compinstall
@@ -31,6 +34,8 @@ export PATH=$PATH:$ANDROID_HOME/emulator
 export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/tools/bin
 export PATH=$PATH:$ANDROID_HOME/platform-tools
+
+export GPG_TTY=$(tty)
 
 # # add android studio to path
 export PATH=$PATH:$HOME/.local/android-studio/bin
