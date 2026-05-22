@@ -26,7 +26,7 @@ vim.lsp.config['cssls'] = {
 }
 
 vim.lsp.config['emmet-ls'] = {
-	on_attach = on_attach,
+	-- on_attach = on_attach,
 	capabilities = capabilities,
 	filetypes = { "css", "eruby", "html", "javascript", "javascriptreact", "less", "sass", "scss", "svelte", "pug", "typescriptreact", "vue"},
 	init_options = {

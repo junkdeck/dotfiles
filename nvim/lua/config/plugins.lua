@@ -23,7 +23,6 @@ require('pckr').add{
 	'nvim-lualine/lualine.nvim';
 
 	-- input utilities
-	'justinmk/vim-sneak'; -- overwrites 's', beware!
 	{
 		'kylechui/nvim-surround',
 		version = "^4.0.0"
@@ -36,11 +35,12 @@ require('pckr').add{
 		end
 	};
 
-	
-
 	-- web-development
 	'tpope/vim-rails';
 	'aca/emmet-ls';
+
+  -- highlighting / colorschemes
+  'RRethy/base16-nvim';
 
 	-- LSP Integration
 	'neovim/nvim-lspconfig';
@@ -64,5 +64,11 @@ require('pckr').add{
 }
 
 -- optional plugin configuration
-
 require('lualine').setup()
+
+require('nvim-treesitter').install({ 'lua', 'luadoc', 'vim', 'vimdoc', 'javascript', 'vue', 'ruby'})
+vim.api.nvim_create_autocmd('FileType', {
+        pattern = { 'lua', 'luadoc', 'vim', 'vimdoc', 'javascript', 'vue', 'ruby' },
+        callback = function() vim.treesitter.start() end
+});
+

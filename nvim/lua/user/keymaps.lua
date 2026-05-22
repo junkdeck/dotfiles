@@ -26,6 +26,11 @@ vim.keymap.set("v", "<C-n>", "<Plug>luasnip-prev-choice", {})
 vim.keymap.set('n', '<leader>p', "<Plug>(Prettier)", opts)
 vim.keymap.set('v', '<leader>p', "<Plug>(PrettierFragment)", opts)
 
+-- prevent * from jumping forward 
+vim.keymap.set('n', '*', '*``')
+
+-- sane terminal exit
+vim.keymap.set('t', '<Esc>', '<C-\\><C-n>')
 
 -- LSP mappings
 -- only maps the following keys after
