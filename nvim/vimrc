@@ -1,41 +1,41 @@
-if empty(glob('~/.vim/autoload/plug.vim'))
-  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
-    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
-endif
+"if empty(glob('~/.vim/autoload/plug.vim'))
+"  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+"    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+"  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+"endif
 
 " disable vi compatibility
-set nocompatible
+"set nocompatible
 
-call plug#begin('~/.vim/plugged')
+"call plug#begin('~/.vim/plugged')
 
 " add vim-plug for helpfiles
-Plug 'junegunn/vim-plug'
+"Plug 'junegunn/vim-plug'
 
-Plug 'ziglang/zig.vim'
-Plug 'karolbelina/uxntal.vim'
+"Plug 'ziglang/zig.vim'
+"Plug 'karolbelina/uxntal.vim'
 
 "vimwiki
-Plug 'vimwiki/vimwiki'
+"Plug 'vimwiki/vimwiki'
 " PICO-8
-Plug 'junkdeck/vim-pico8-syntax'
-Plug 'junkdeck/pico8-vim-colorscheme'
+"Plug 'junkdeck/vim-pico8-syntax'
+"Plug 'junkdeck/pico8-vim-colorscheme'
 " == GENERIC-USE / AUGMENTING PLUGINS
-Plug 'rust-lang/rust.vim'
-Plug 'janko/vim-test', {'commit': 'aff3607e7698ab5a94a58fdda7ecb5ec567ac293'}
-Plug 'w0rp/ale'
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'vim-scripts/L9'
-Plug 'chriskempson/base16-vim'
-Plug 'Yggdroot/LeaderF'
-Plug 'itchyny/lightline.vim'
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-repeat'
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-eunuch'
-Plug 'tpope/vim-abolish'
-Plug 'tpope/vim-unimpaired'
-Plug 'jiangmiao/auto-pairs'
+"Plug 'rust-lang/rust.vim'
+"Plug 'janko/vim-test', {'commit': 'aff3607e7698ab5a94a58fdda7ecb5ec567ac293'}
+"Plug 'w0rp/ale'
+"Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+"Plug 'vim-scripts/L9'
+"Plug 'chriskempson/base16-vim'
+"Plug 'Yggdroot/LeaderF'
+"Plug 'itchyny/lightline.vim'
+"Plug 'tpope/vim-surround'
+"Plug 'tpope/vim-repeat'
+"Plug 'tpope/vim-fugitive'
+"Plug 'tpope/vim-eunuch'
+"Plug 'tpope/vim-abolish'
+"Plug 'tpope/vim-unimpaired'
+"Plug 'jiangmiao/auto-pairs'
 Plug 'wellle/targets.vim'
 Plug 'SirVer/ultisnips'
 Plug 'junkdeck/vim-snippets'

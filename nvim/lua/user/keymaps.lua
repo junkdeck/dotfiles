@@ -10,6 +10,12 @@ vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
 vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist, opts)
 
+-- fuzzy file finder keymaps
+local builtin = require('telescope.builtin')
+vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = "Telescope: find files" })
+vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = "Telescope: live grep" })
+vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = "Telescope: find buffers" })
+
 -- luasnip mappings for both INSERT and VISUAL
 vim.keymap.set("i", "<C-n>", "<Plug>luasnip-next-choice", {})
 vim.keymap.set("i", "<C-n>", "<Plug>luasnip-prev-choice", {})
@@ -17,8 +23,8 @@ vim.keymap.set("v", "<C-n>", "<Plug>luasnip-next-choice", {})
 vim.keymap.set("v", "<C-n>", "<Plug>luasnip-prev-choice", {})
 
 -- prettier mappings
-vim.keymap.set('n', '<leader>f', "<Plug>(Prettier)", opts)
-vim.keymap.set('v', '<leader>f', "<Plug>(PrettierFragment)", opts)
+vim.keymap.set('n', '<leader>p', "<Plug>(Prettier)", opts)
+vim.keymap.set('v', '<leader>p', "<Plug>(PrettierFragment)", opts)
 
 
 -- LSP mappings

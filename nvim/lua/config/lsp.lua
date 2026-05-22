@@ -5,7 +5,7 @@ capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 -- activate LSPs
 -- IMPORTANT: LSPs must be installed manually via NPM!
-local servers  = {'tailwindcss', 'tsserver', 'jsonls', 'eslint', 'cssls', 'html' }
+local servers  = {'tailwindcss', 'tsserver', 'jsonls', 'eslint'}
 
 for _, lsp in pairs(servers) do
 	vim.lsp.config[lsp] = {
@@ -15,8 +15,30 @@ for _, lsp in pairs(servers) do
 	vim.lsp.enable(lsp)
 end
 
--- snippet setup
+vim.lsp.config['html'] = {
+	on_attach = on_attach,
+	capabilities = capabilities
+}
 
+vim.lsp.config['cssls'] = {
+	on_attach = on_attach,
+	capabilities = capabilities
+}
+
+vim.lsp.config['emmet-ls'] = {
+	on_attach = on_attach,
+	capabilities = capabilities,
+	filetypes = { "css", "eruby", "html", "javascript", "javascriptreact", "less", "sass", "scss", "svelte", "pug", "typescriptreact", "vue"},
+	init_options = {
+		html = {
+			options = {
+				['bem.enabled'] = true,
+			}
+		}
+	}
+}
+
+-- snippet setup
 local luasnip = require("luasnip")
 require("luasnip.loaders.from_lua").lazy_load()
 

@@ -1,9 +1,46 @@
 require('pckr').add{
+	-- libraries
+	'nvim-lua/plenary.nvim';
+	'nvim-tree/nvim-web-devicons';
 	{
-		'L3MON4D3/LuaSnip',
-		tag = "v2.*",
-		run = "make install_jsregexp"
+		'nvim-treesitter/nvim-treesitter',
+		lazy = false,
+		build = ':TSUpdate'
 	};
+
+	-- testing
+	'janko/vim-test';
+
+	-- fuzzy finder / file navigation
+	'chrisgrieser/nvim-genghis';
+	'nvim-telescope/telescope.nvim';
+	{
+		'nvim-telescope/telescope-fzf-native.nvim',
+		run = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release --target install' 
+	};
+
+	-- statusline
+	'nvim-lualine/lualine.nvim';
+
+	-- input utilities
+	'justinmk/vim-sneak'; -- overwrites 's', beware!
+	{
+		'kylechui/nvim-surround',
+		version = "^4.0.0"
+	};
+	{
+		'windwp/nvim-autopairs',
+		event = "InsertEnter",
+		config = function() 
+			require("nvim-autopairs").setup()
+		end
+	};
+
+	
+
+	-- web-development
+	'tpope/vim-rails';
+	'aca/emmet-ls';
 
 	-- LSP Integration
 	'neovim/nvim-lspconfig';
@@ -13,10 +50,19 @@ require('pckr').add{
 	'hrsh7th/cmp-buffer';
 	'hrsh7th/cmp-path';
 
-	-- Prettier
 	{
 		'prettier/vim-prettier',
 		run = 'yarn install --frozen-lockfile --production',
 		ft = {'javascript', 'typescript', 'css', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html' }
-	}
+	};
+
+	{
+		'L3MON4D3/LuaSnip',
+		tag = "v2.*",
+		run = "make install_jsregexp"
+	};
 }
+
+-- optional plugin configuration
+
+require('lualine').setup()
