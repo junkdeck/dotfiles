@@ -30,7 +30,6 @@ vim.opt.mouse = {}
 
 -- persistent per-file undo cache
 vim.o.undofile = true
-vim.o.undodir = "~/.config/nvim/undodir"
 
 -- indentation
 -- uses spaces instead of tabs

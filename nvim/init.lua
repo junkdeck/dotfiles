@@ -4,4 +4,5 @@ require("config.lsp")
 
 require("user.keymaps")
 require("user.settings")
+require("user.autocmds")
 
