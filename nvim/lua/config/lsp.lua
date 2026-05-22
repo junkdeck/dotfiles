@@ -36,20 +36,6 @@ for _, lsp in pairs(servers) do
 	vim.lsp.enable(lsp)
 end
 
-vim.lsp.config['emmet_ls'] = {
-	-- on_attach = on_attach,
-	capabilities = capabilities,
-	filetypes = { "css", "eruby", "html", "javascript", "javascriptreact", "less", "sass", "scss", "svelte", "pug", "typescriptreact", "vue"},
-	init_options = {
-		html = {
-			options = {
-				['bem.enabled'] = true,
-			}
-		}
-	}
-}
-vim.lsp.enable('emmet_ls')
-
 local npm_root = vim.fn.trim(vim.fn.system('npm root -g'))
 local vue_ts_plugin = npm_root .. '/@vue/language-server/node_modules/@vue/typescript-plugin'
 

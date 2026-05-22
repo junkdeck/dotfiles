@@ -37,7 +37,6 @@ require('pckr').add{
 
 	-- web-development
 	'tpope/vim-rails';
-	'aca/emmet-ls';
 
   -- highlighting / colorschemes
   'RRethy/base16-nvim';
