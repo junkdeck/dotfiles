@@ -3,3 +3,5 @@
 
 /plugged
 /autoload
+
+nvim/undodir
