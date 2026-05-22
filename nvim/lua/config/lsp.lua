@@ -26,8 +26,7 @@ end
 
 -- activate LSPs
 -- IMPORTANT: LSPs must be installed manually via NPM!
-local servers  = {'tailwindcss', 'jsonls', 'eslint', 'html', 'cssls', 'vue_ls'}
-
+local servers  = {'tailwindcss', 'jsonls', 'eslint', 'html', 'cssls'}
 for _, lsp in pairs(servers) do
 	vim.lsp.config[lsp] = {
 		on_attach = on_attach,
@@ -36,23 +35,47 @@ for _, lsp in pairs(servers) do
 	vim.lsp.enable(lsp)
 end
 
-local npm_root = vim.fn.trim(vim.fn.system('npm root -g'))
-local vue_ts_plugin = npm_root .. '/@vue/typescript-plugin'
+-- vue/ts language server
 
-vim.lsp.config['ts_ls'] = {
-  capabilities = capabilities,
+local npm_root = vim.fn.trim(vim.fn.system('npm root -g'))
+local vue_language_server_path = npm_root .. '/@vue/language-server'
+
+local tsserver_filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue' }
+
+local vue_plugin = {
+  name = "@vue/typescript-plugin",
+  location = vue_language_server_path,
+  languages = { 'vue'},
+  configNamespace = 'typescript'
+}
+local vtsls_config = {
+  settings = {
+    vtsls = {
+      tsserver = {
+        globalPlugins = {
+          vue_plugin
+        }
+      }
+    }
+  },
+  filetypes = tsserver_filetypes,
+}
+
+local ts_ls_config = {
   init_options = {
     plugins = {
-      {
-        name = '@vue/typescript-plugin',
-        location = vue_ts_plugin,
-        languages = { 'vue' },
-      },
+      vue_plugin,
     },
   },
-  filetypes = { 'javascript', 'javascriptreact', 'typescript', 'typescriptreact', 'vue' },
+  filetypes = tsserver_filetypes,
 }
-vim.lsp.enable('ts_ls')
+
+local vue_ls_config = {}
+vim.lsp.config('vtsls', vtsls_config)
+vim.lsp.config('ts_ls', ts_ls_config)
+vim.lsp.config('vue_ls', vue_ls_config)
+vim.lsp.enable({'vtsls', 'vue_ls'})
+
 
 -- snippet setup
 local luasnip = require("luasnip")
