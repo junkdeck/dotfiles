@@ -99,6 +99,9 @@ endfunction
 set rtp+=~/.fzf
 
 " == CORE FUNCTIONALITY CONFIGURATION ==
+" folding
+set foldmethod=syntax
+set foldlevel=99
 " hybrid line numbers, display current line as absolute, rest as relative
 set number relativenumber
 " reload files changed outside vim
@@ -196,7 +199,6 @@ let g:user_emmet_settings = {
 \}
 " lightline setup - colorscheme and branch name
 let g:lightline = {
-  \'colorscheme':'nord',
   \'active': {
   \  'left': [['mode', 'paste'],
   \  ['gitbranch', 'readonly', 'filename', 'modified']]
@@ -208,13 +210,13 @@ let g:lightline = {
 
 " ALE config
 let g:ale_lint_on_save = 1
-let g:ale_fix_on_save = 1
+let g:ale_fix_on_save = 0
 
 let g:ale_virtualtext_cursor = 'current'
 
-" let g:ale_javascript_eslint_use_global = 1
-" let g:ale_javascript_eslint_executable = 'eslint_d'
-" let g:ale_javascript_eslint_options = ''
+let g:ale_javascript_prettier_use_global = 1
+let g:ale_javascript_prettier_executable = 'yarn'
+let g:ale_javascript_prettier_options = 'run prettier'
 
 let g:ale_linter_aliases = {'svelte': ['css', 'javascript']}
 
@@ -232,7 +234,7 @@ let g:ale_fixers = {
 \ 'javascript': ['eslint', 'prettier'],
 \ 'javascript.jsx': ['eslint', 'prettier'],
 \ 'vue': ['prettier'],
-\ 'ruby': ['standardrb'],
+\ 'ruby': ['syntax_tree', 'standardrb'],
 \ 'css': ['prettier'],
 \ 'scss': ['prettier'],
 \ 'html': ['prettier'],
@@ -273,10 +275,10 @@ nnoremap <leader>f :Leaderf file --no-auto-preview<CR>
 " launch love in current directory
 nnoremap <leader>l :silent !love .<CR>
 " vim-test maps
-nmap <silent> <leader>tn :w<CR>:TestNearest<CR>
-nmap <silent> <leader>tf :w<CR>:TestFile<CR>
-nmap <silent> <leader>ts :w<CR>:TestSuite<CR>
-nmap <silent> <leader>tl :w<CR>:TestLast<CR>
+nmap <silent> <leader>tn :TestNearest<CR>
+nmap <silent> <leader>tf :TestFile<CR>
+nmap <silent> <leader>ts :TestSuite<CR>
+nmap <silent> <leader>tl :TestLast<CR>
 " fugitive maps
 nnoremap <leader>ga :Git add %:p<CR><CR>
 nnoremap <leader>gs :Gstatus<CR>
@@ -300,6 +302,10 @@ nnoremap <Leader>co :copen<CR>
 nnoremap <Leader>cc :cclose<CR>
 " remove search highlight
 nnoremap <Leader>n :noh<CR>
+" prettier
+nnoremap <Leader>p :ALEFix<CR>
+" no-magic mode by default for search
+nnoremap / /\m
 " window manipulation maps
 map - <C-w>-
 map + <C-w>+

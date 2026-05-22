@@ -15,7 +15,7 @@ stty -ixon
 zstyle ':completion:*' completer _expand _complete _ignored _approximate
 zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 zstyle ':completion:*' menu select
-zstyle :compinstall filename '/home/fred/.zshrc'
+zstyle :compinstall filename '~/.zshrc'
 
 autoload -Uz compinit
 compinit
@@ -60,6 +60,9 @@ export PATH="$PATH:$N_PREFIX/bin"
 
 export PATH="$PATH:$HOME/.local/bin"
 
+export GEM_HOME=$HOME/gems
+export PATH=$HOME/gems/bin:$PATH
+
 if [ -n "$DESKTOP_SESSION" ];then
   eval $(gnome-keyring-daemon --start)
   export SSH_AUTH_SOCK
@@ -72,11 +75,12 @@ BASE16_SHELL=$HOME/.config/base16-shell
 # [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 # [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
+alias fgu="cd ~/dev/fguplaner_backend"
 alias python="python3"
 
 alias hch="git add CHANGELOG.md && git commit -m 'add changelog entry'"
 
-alias vimconf="nvim /home/fred/.vim/vimrc"
+alias vimconf="nvim ~/.vim/vimrc"
 alias vimplug="nvim +PlugInstall +PlugClean +qa"
 alias vimupd="nvim +PlugUpdate +qa"
 
@@ -98,8 +102,8 @@ alias goom="gop origin master"
 # wholesome mode activate
 alias please="sudo"
 
-alias zshconf="nvim /home/fred/.zshrc"
-alias xup="xrdb /home/fred/.Xresources"
+alias zshconf="nvim ~/.zshrc"
+alias xup="xrdb ~/.Xresources"
 
 alias yl="ga yarn.lock && gcmsg \"yarn.lock\""
 
@@ -131,6 +135,10 @@ alias pest="php artisan test"
 
 alias convertwebp="find ./ -name \"*.webp\" -exec dwebp {} -o {}.png \;; find . -type f -name '*.webp' -delete"
 
+alias migrate_all="rails db:migrate && rails db:migrate RAILS_ENV=test"
+alias rollback_all="rails db:rollback && rails db:rollback RAILS_ENV=test"
+alias reset_all="rake db:migrate:reset && rake db:migrate:reset RAILS_ENV=test"
+
 
 function dkill() {
   docker kill $(docker ps -q)
@@ -144,7 +152,27 @@ function dbash() {
   docker exec -it $1 /bin/bash
 }
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+function update_chrome_for_testing() {
+    echo "Let's update chrome for testing!"
+
+    cd ~
+
+    V=$(npx --yes @puppeteer/browsers install chrome@stable | cut -d " " -f 1 | cut -d "@" -f 2)
+    npx --yes @puppeteer/browsers install chromedriver@stable
+
+    cd chrome
+    rm -f current
+    ln -sv mac_arm-${V} current
+
+    cd ../chromedriver
+    rm -f current
+    ln -sv mac_arm-${V} current
+
+    cd ..
+}
+
+source <(fzf --zsh)
+# [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # add composer to PATH
 export PATH=$HOME/.config/composer/vendor/bin:$PATH
@@ -153,10 +181,10 @@ export PATH=$HOME/.config/composer/vendor/bin:$PATH
 #eval "$(rbenv init -)"
 
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f '/home/fred/.local/share/google-cloud-sdk/path.zsh.inc' ]; then . '/home/fred/.local/share/google-cloud-sdk/path.zsh.inc'; fi
+if [ -f '~/.local/share/google-cloud-sdk/path.zsh.inc' ]; then . '~/.local/share/google-cloud-sdk/path.zsh.inc'; fi
 
 # The next line enables shell command completion for gcloud.
-if [ -f '/home/fred/.local/share/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/fred/.local/share/google-cloud-sdk/completion.zsh.inc'; fi
+if [ -f '~/.local/share/google-cloud-sdk/completion.zsh.inc' ]; then . '~/.local/share/google-cloud-sdk/completion.zsh.inc'; fi
 
 
 # increase node RAM limit
@@ -169,3 +197,4 @@ export DEVKITPPC=${DEVKITPRO}/devkitPPC
 
 export PATH=${DEVKITPRO}/tools/bin:$PATH
 
+clear
