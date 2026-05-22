@@ -37,7 +37,7 @@ for _, lsp in pairs(servers) do
 end
 
 local npm_root = vim.fn.trim(vim.fn.system('npm root -g'))
-local vue_ts_plugin = npm_root .. '/@vue/language-server/node_modules/@vue/typescript-plugin'
+local vue_ts_plugin = npm_root .. '/@vue/typescript-plugin'
 
 vim.lsp.config['ts_ls'] = {
   capabilities = capabilities,
