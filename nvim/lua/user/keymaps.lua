@@ -22,8 +22,13 @@ vim.keymap.set("i", "<C-n>", "<Plug>luasnip-prev-choice", {})
 vim.keymap.set("v", "<C-n>", "<Plug>luasnip-next-choice", {})
 vim.keymap.set("v", "<C-n>", "<Plug>luasnip-prev-choice", {})
 
+-- vim-test mappings
+vim.keymap.set('n', '<leader>tn', "<Plug>TestNearest")
+vim.keymap.set('n', '<leader>tf', "<Plug>TestFile")
+vim.keymap.set('n', '<leader>tl', "<Plug>TestLast")
+
 -- prettier mappings
-vim.keymap.set('n', '<leader>p', "<Plug>(Prettier)", opts)
+vim.keymap.set('n', '<leader>p', "<Plug>Prettier", opts)
 vim.keymap.set('v', '<leader>p', "<Plug>(PrettierFragment)", opts)
 
 -- prevent * from jumping forward 
