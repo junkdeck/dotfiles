@@ -72,3 +72,4 @@ vim.api.nvim_create_autocmd('FileType', {
         callback = function() vim.treesitter.start() end
 });
 
+vim.cmd('colorscheme base16-gruvbox-dark-soft')
