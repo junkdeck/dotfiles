@@ -16,7 +16,7 @@ require('pckr').add{
 	'nvim-telescope/telescope.nvim';
 	{
 		'nvim-telescope/telescope-fzf-native.nvim',
-		run = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release --target install' 
+		run = 'make' 
 	};
 
 	-- statusline
