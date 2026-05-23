@@ -23,9 +23,9 @@ vim.keymap.set("v", "<C-n>", "<Plug>luasnip-next-choice", {})
 vim.keymap.set("v", "<C-n>", "<Plug>luasnip-prev-choice", {})
 
 -- vim-test mappings
-vim.keymap.set('n', '<leader>tn', "<Plug>TestNearest")
-vim.keymap.set('n', '<leader>tf', "<Plug>TestFile")
-vim.keymap.set('n', '<leader>tl', "<Plug>TestLast")
+vim.keymap.set('n', '<leader>tn', ":TestNearest<CR>", opts)
+vim.keymap.set('n', '<leader>tf', ":TestFile<CR>", opts)
+vim.keymap.set('n', '<leader>tl', ":TestLast<CR>", opts)
 
 -- prettier mappings
 vim.keymap.set('n', '<leader>p', "<Plug>(Prettier)", opts)
