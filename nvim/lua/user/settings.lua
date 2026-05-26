@@ -1,5 +1,5 @@
 -- folding
-vim.o.foldmethod = "syntax"
+vim.o.foldmethod = "indent"
 vim.o.foldlevel = 99
 -- line number display
 vim.o.relativenumber = true
