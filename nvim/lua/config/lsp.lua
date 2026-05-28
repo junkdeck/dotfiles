@@ -26,7 +26,7 @@ end
 
 -- activate LSPs
 -- IMPORTANT: LSPs must be installed manually via NPM!
-local servers  = {'tailwindcss', 'jsonls', 'eslint', 'html', 'cssls'}
+local servers  = {'tailwindcss', 'jsonls', 'eslint', 'html', 'cssls', 'emmet_language_server'}
 for _, lsp in pairs(servers) do
   vim.lsp.config[lsp] = {
     on_attach = on_attach,

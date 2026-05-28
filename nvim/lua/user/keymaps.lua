@@ -45,3 +45,6 @@ vim.keymap.set('t', '<Esc>', '<C-\\><C-n>')
 
 -- close buffer instead of window (more compatible with mini.tabline)
 vim.keymap.set('n', '<C-w>q', '<cmd>bd<CR>', opts)
+
+-- set emmet key
+vim.keymap.set({"n", "v"}, '<leader>e', require('nvim-emmet').wrap_with_abbreviation)

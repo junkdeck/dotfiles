@@ -44,6 +44,9 @@ require('pckr').add{
     end
   };
 
+  -- emmet
+  'olrtg/nvim-emmet';
+
   -- web-development
   'tpope/vim-rails';
 
