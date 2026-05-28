@@ -7,33 +7,55 @@ capabilities.textDocument.completion.completionItem.snippetSupport = true
 -- only maps the following keys after
 -- the language server attaches to the buffer
 local on_attach = function(client, bufnr)
-	-- enable completion <c-x><c-o>
-	vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
+  -- enable completion <c-x><c-o>
+  vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
 
-	-- LSP mappings
-	local bufopts= { noremap=true, silent=true, buffer=bufnr }
-	vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, bufopts)
-	vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
-	vim.keymap.set('n', 'gk', vim.lsp.buf.hover, bufopts)
-	vim.keymap.set('n', 'gK', vim.lsp.buf.signature_help, bufopts)
-	vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, bufopts)
-	vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
-	vim.keymap.set('n', '<space>D', vim.lsp.buf.type_definition, bufopts)
-	vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, bufopts)
-	vim.keymap.set('n', '<space>ca', vim.lsp.buf.code_action, bufopts)
-	vim.keymap.set('n', '<space>f', function() vim.lsp.buf.format { async=true } end, bufopts)
+  -- LSP mappings
+  local bufopts= { noremap=true, silent=true, buffer=bufnr }
+  vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, bufopts)
+  vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
+  vim.keymap.set('n', 'gk', vim.lsp.buf.hover, bufopts)
+  vim.keymap.set('n', 'gK', vim.lsp.buf.signature_help, bufopts)
+  vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, bufopts)
+  vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
+  vim.keymap.set('n', '<space>D', vim.lsp.buf.type_definition, bufopts)
+  vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, bufopts)
+  vim.keymap.set('n', '<space>ca', vim.lsp.buf.code_action, bufopts)
+  vim.keymap.set('n', '<space>f', function() vim.lsp.buf.format { async=true } end, bufopts)
 end
 
 -- activate LSPs
 -- IMPORTANT: LSPs must be installed manually via NPM!
 local servers  = {'tailwindcss', 'jsonls', 'eslint', 'html', 'cssls'}
 for _, lsp in pairs(servers) do
-	vim.lsp.config[lsp] = {
-		on_attach = on_attach,
-		capabilities = capabilities;
-	}
-	vim.lsp.enable(lsp)
+  vim.lsp.config[lsp] = {
+    on_attach = on_attach,
+    capabilities = capabilities;
+  }
+  vim.lsp.enable(lsp)
 end
+
+-- ruby LSP
+vim.lsp.config['ruby-lsp'] = {
+  on_attach = on_attach,
+  capabilities = capabilities,
+  filetypes = { "ruby" },
+  cmd = { "ruby-lsp" },
+  root_markers = { "Gemfile", ".git"},
+
+  init_options = {
+    formatter = "standard",
+    linters = { "standard" },
+    addonSettings = {
+      ["Ruby LSP Rails"] = {
+        enablePendingMigrationsPrompt = false
+      }
+    }
+  }
+
+}
+vim.lsp.enable('ruby-lsp')
+
 
 -- vue/ts language server
 

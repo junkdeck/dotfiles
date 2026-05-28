@@ -15,6 +15,12 @@ local builtin = require('telescope.builtin')
 vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = "Telescope: find files" })
 vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = "Telescope: live grep" })
 vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = "Telescope: find buffers" })
+vim.keymap.set("n", "<leader>fa", function()
+    local stem = vim.fn.expand("%:t:r")
+    -- drop trailing .spec / .test / _spec etc.
+    stem = stem:gsub("[._]?[Ss]pec$", ""):gsub("[._]?[Tt]est$", "")
+    builtin.find_files({ default_text = stem })
+  end, { desc = "Telescope: find alternate files" })
 
 -- luasnip mappings for both INSERT and VISUAL
 vim.keymap.set("i", "<C-n>", "<Plug>luasnip-next-choice", {})
@@ -37,3 +43,5 @@ vim.keymap.set('n', '*', '*``')
 -- sane terminal exit
 vim.keymap.set('t', '<Esc>', '<C-\\><C-n>')
 
+-- close buffer instead of window (more compatible with mini.tabline)
+vim.keymap.set('n', '<C-w>q', '<cmd>bd<CR>', opts)

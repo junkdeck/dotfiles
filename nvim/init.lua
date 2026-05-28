@@ -6,4 +6,4 @@ require("config.settings")
 require("user.keymaps")
 require("user.settings")
 require("user.autocmds")
-
+require("user.colorscheme")

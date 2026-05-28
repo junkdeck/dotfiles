@@ -1,5 +1,5 @@
 -- folding
-vim.o.foldmethod = "indent"
+vim.o.foldmethod = "syntax"
 vim.o.foldlevel = 99
 -- line number display
 vim.o.relativenumber = true
@@ -39,4 +39,13 @@ vim.o.tabstop = 2
 vim.o.softtabstop = 2
 vim.o.shiftwidth = 2
 
-vim.cmd('colorscheme base16-gruvbox-light-soft')
+vim.o.winborder = 'rounded'
+
+vim.diagnostic.config {
+  signs = true,
+  underline = true,
+  virtual_text = true,
+  virtual_lines = true,
+}
+
+vim.g.user_emmet_leader_key = "<C-e>"

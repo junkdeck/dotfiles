@@ -68,8 +68,8 @@ if [ -n "$DESKTOP_SESSION" ];then
   export SSH_AUTH_SOCK
 fi
 
-BASE16_SHELL=$HOME/.config/base16-shell
-[ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
+# BASE16_SHELL=$HOME/.config/base16-shell
+# [ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
 
 # export NVM_DIR="$HOME/.nvm"
 # [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -80,9 +80,7 @@ alias python="python3"
 
 alias hch="git add CHANGELOG.md && git commit -m 'add changelog entry'"
 
-alias vimconf="nvim ~/.vim/vimrc"
-alias vimplug="nvim +PlugInstall +PlugClean +qa"
-alias vimupd="nvim +PlugUpdate +qa"
+alias vimconf="nvim ~/dotfiles/nvim/init.lua"
 
 alias gr="grep -r -i"
 

@@ -15,4 +15,4 @@ robbyrussell/oh-my-zsh path:plugins/docker
 robbyrussell/oh-my-zsh path:plugins/docker-compose
 robbyrussell/oh-my-zsh path:plugins/asdf
 
-chriskempson/base16-shell
+# chriskempson/base16-shell

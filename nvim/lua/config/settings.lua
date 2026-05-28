@@ -2,11 +2,15 @@
 -- initialize lualine
 require('lualine').setup()
 
+
+-- initialize tabline (tabs)
+require('mini.tabline').setup()
+
 -- initialize and install required treesitter plugins
 -- already installed plugins will be skipped
 require('nvim-treesitter').install({ 'lua', 'luadoc', 'vim', 'vimdoc', 'javascript', 'vue', 'ruby', 'typescript', 'tsx'})
 vim.api.nvim_create_autocmd('FileType', {
-        pattern = { 'lua', 'luadoc', 'vim', 'vimdoc', 'javascript', 'vue', 'ruby' },
+        pattern = { 'lua', 'luadoc', 'vim', 'vimdoc', 'javascript', 'vue', 'ruby', 'typescript', 'tsx' },
         callback = function() vim.treesitter.start() end
 });
 
@@ -23,3 +27,4 @@ require('telescope').setup({
   }
 })
 require('telescope').load_extension('fzf')
+
